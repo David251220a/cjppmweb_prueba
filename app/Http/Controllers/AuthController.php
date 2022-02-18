@@ -55,7 +55,7 @@ class AuthController extends Controller
         });
 
         $user->password = bcrypt($pass);
-        $user->save();
+        $user->update();
 
         return redirect()->route('login')->with(['message' => 'La contraseña se ha restablecido y enviado a su correo electronico'])->withInput();
     }
